@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker run -i \
+    --network host \
+    -p 3100:3100 \
+    grafana/loki \
+    --config.file="/etc/loki/local-config.yaml"

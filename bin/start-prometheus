@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+echo "copying prometheus config to /etc/prometheus"
+
+cp config/prometheus.yml /etc/prometheus/prometheus.yml
+
+docker run -i \
+    --network host \
+    -p 9090:9090 \
+    -v /etc/prometheus:/etc/prometheus \
+    -v /data/prometheus:/data/prometheus \
+    prom/prometheus \
+    --config.file="/etc/prometheus/prometheus.yml"

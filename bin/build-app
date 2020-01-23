@@ -1,0 +1,3 @@
+dotnet publish src/dotnetAPM.csproj --configuration Debug
+
+docker build src/. -t dotnetapm

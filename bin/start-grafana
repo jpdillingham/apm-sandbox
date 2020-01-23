@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker run -i \
+    --network host \
+    -p 3000:3000 \
+    -e "GF_SECURITY_ADMIN_PASSWORD=secret" \
+    grafana/grafana
