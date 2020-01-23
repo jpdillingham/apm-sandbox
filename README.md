@@ -1,5 +1,5 @@
 # apm-sandbox
-Quick stack for APM (Application Performance Monitoring) using Prometheus for metrics ingestion, Loki for log ingestion, and Grafana for aggregation/visualization.
+Quick stack for APM (Application Performance Management) using Prometheus for metrics ingestion, Loki for log ingestion, and Grafana for aggregation/visualization.
 
 Includes a .NET Core template app with Prometheus metrics and Serilog with a Loki sink.
 
