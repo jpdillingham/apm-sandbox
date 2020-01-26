@@ -1,0 +1,8 @@
+docker run -i \
+    --network host \
+    -e "SERVER_NAME=kibana" \
+    -e "SERVER_HOST=0.0.0.0" \
+    -e "SERVER_PORT=9500" \
+    -e "ELASTICSEARCH_HOSTS=http://localhost:9200" \
+    -e "XPACK_MONITORING_ENABLED=true" \
+    docker.elastic.co/kibana/kibana:6.8.6

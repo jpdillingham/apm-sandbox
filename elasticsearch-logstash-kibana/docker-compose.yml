@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.8.6
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+        network_mode: host
+        environment:
+            - discovery.type=single-node
+    kibana:
+        image: docker.elastic.co/kibana/kibana:6.8.6
+        ports:
+            - "9500:9500"
+        environment:
+            - SERVER_NAME=kibana
+            - SERVER_HOST=0.0.0.0
+            - SERVER_PORT=9500
+            - ELASTICSEARCH_HOSTS=http://localhost:9200
+            - XPACK_MONITORING_ENABLED=true
+        network_mode: host
